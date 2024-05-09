@@ -1,15 +1,7 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "./ui/button";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import CustomBtn from "./CustomBtn";
 const Hero = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-    });
-  }, []);
   return (
     <div
       className=" duration-300"
@@ -22,37 +14,26 @@ const Hero = () => {
         height: "80%",
       }}
     >
-      {/* <Image src={BannerImg} alt="" width={80} height={80} /> */}
-      {/* <img src={BannerImg} /> */}
       <div className="bg-white/70  dark:bg-black/80 duration-300 ">
         <div className="container min-h-[620px] flex items-center">
           <div className="w-full md:w-[550px] mx-auto text-center space-y-5">
             <p
-              data-aos="fade-left"
+              data-aos="fade-up"
               className="text-primary text-2xl font-semibold"
             >
               Start Your Fitness Journey
             </p>
             <h1
               data-aos="fade-up"
-              data-aos-delay="400"
+              data-aos-delay="300"
               className="text-5xl md:text-7xl font-bold"
             >
               Your Fitness Journey Begins!
             </h1>
-            <p
-              data-aos="fade-up"
-              //  data-aos-delay="500"
-            >
+            <p data-aos="fade-up" data-aos-delay="500">
               “The body achieves what the mind believes.”{" "}
             </p>
-            <Button
-              data-aos="fade-up"
-              data-aos-delay="700"
-              className="bg-primary text-white font-semibold  text-base"
-            >
-              Get Started
-            </Button>
+            <CustomBtn animation="fade-up" title={"Get Started"}></CustomBtn>
           </div>
         </div>
       </div>

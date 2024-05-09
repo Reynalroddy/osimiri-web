@@ -1,28 +1,41 @@
 "use client";
 import About from "@/components/About";
-import Classes from "@/components/Classes";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Membership from "@/components/Membership";
-import Teams from "@/components/Teams";
-import Testimonial from "@/components/Testimonial";
-import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import BannerImg from "@/assets/banner-kyiao0qv.png";
 export default function Home() {
   useEffect(() => {
     AOS.init({
+      offset: 100,
       duration: 800,
-      once: false,
+      easing: "ease-in-sine",
+      delay: 100,
     });
+    AOS.refresh();
   }, []);
   return (
     <>
       <Hero />
-      <div data-aos="fade-right" className="text-center">
-        guyss
-      </div>
+      <About
+        number="01"
+        title=" Unique Experiences Tailored To Your Lifestyle"
+        text="  Our timetable offers a wide range of low to high-intensity
+                fitness programmes to suit your fitness lifestyle. There’s
+                something for everyone! Enjoy a sense of belonging in a
+                community that supports your fitness goals and reminds you that
+                you are not alone!"
+        img={BannerImg}
+        reverse={false}
+      />
+      <About
+        number="02"
+        title="Ultra-Modern Facilities"
+        text=" We have variety of  professionally certified personal trainers and ultra-modern facilities in our gym center.Our core cardio classes are designed to help you reach your goal. "
+        img={BannerImg}
+        reverse={true}
+      />
     </>
   );
 }
