@@ -4,7 +4,8 @@ import Hero from "@/components/Hero";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import BannerImg from "@/assets/banner-kyiao0qv.png";
+import BannerImg from "@/assets/home2.jpeg";
+import BannerImg1 from "@/assets/home1.jpeg";
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -26,7 +27,7 @@ export default function Home() {
                 something for everyone! Enjoy a sense of belonging in a
                 community that supports your fitness goals and reminds you that
                 you are not alone!"
-        img={BannerImg}
+        img={BannerImg1}
         reverse={false}
       />
       <About

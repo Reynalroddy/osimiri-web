@@ -1,5 +1,5 @@
 import React from "react";
-import BannerImg from "@/assets/banner-kyiao0qv.png";
+import BannerImg from "@/assets/home1.jpeg";
 import Image from "next/image";
 import CustomBtn from "./CustomBtn";
 import { StaticImageData } from "next/image";
