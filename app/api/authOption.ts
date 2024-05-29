@@ -3,7 +3,7 @@ import {
   getRefreshedUser,
   loginOrRegisterUser,
 } from "@/lib/api";
-import NextAuth, { AuthOptions, Session } from "next-auth";
+import { AuthOptions, Session } from "next-auth";
 const tokenExpiration = 60 * 60 * 24;
 import CredentialsProvider from "next-auth/providers/credentials";
 export const authOptions: AuthOptions = {

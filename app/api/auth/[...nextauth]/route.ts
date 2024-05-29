@@ -1,19 +1,5 @@
-import {
-  getRefreshedTokenPair,
-  getRefreshedUser,
-  loginOrRegisterUser,
-} from "@/lib/api";
-import NextAuth, { AuthOptions, Session } from "next-auth";
-
-import CredentialsProvider from "next-auth/providers/credentials";
-import { NextRequest } from "next/server";
+import NextAuth from "next-auth";
 import { authOptions } from "../../authOption";
-const tokenExpiration = 60 * 60 * 24;
-// const tokenExpiration = 60 * 1;
-type Credentials = {
-  email: string;
-  password: string;
-};
 
 // async function auth(req: NextRequest, res: any) {
 //   return await NextAuth(req, res, {
@@ -148,5 +134,5 @@ type Credentials = {
 //   secret: process.env.NEXTAUTH_SECRET,
 // };
 
-export const handler = NextAuth(authOptions);
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
