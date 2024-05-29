@@ -3,6 +3,7 @@ import BannerImg from "@/assets/home1.jpeg";
 import Image from "next/image";
 import CustomBtn from "./CustomBtn";
 import { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 const About = ({
   reverse,
   img,
@@ -16,6 +17,7 @@ const About = ({
   title: string;
   text: string;
 }) => {
+  const router = useRouter();
   return (
     <div
       className={`py-14 ${
@@ -54,6 +56,7 @@ We have over 200 professionally certified personal trainers and ultra-modern fac
                 title={" Get Started"}
                 type={"outline"}
                 animation="fade-up"
+                onClick={() => router.push("/auth/register")}
               ></CustomBtn>
             </div>
           </div>

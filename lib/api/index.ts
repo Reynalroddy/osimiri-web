@@ -68,3 +68,32 @@ export const getRefreshedUser = async (token: any) => {
     return { ...token, error: "AccessTokenError" as const };
   }
 };
+
+export const terms: any = {
+  "1": {
+    Single: 3000,
+  },
+  "7": {
+    Single: 5000,
+  },
+  "14": {
+    Single: 9000,
+  },
+  "30": {
+    Single: 14900,
+  },
+  "90": {
+    Single: 39900,
+  },
+  "180": {
+    Single: 74900,
+  },
+  "365": {
+    Single: 144900,
+  },
+};
+
+export const getVal = (duration: any, plan: any) => {
+  const res = terms[duration][plan];
+  return res;
+};

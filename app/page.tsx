@@ -6,6 +6,10 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import BannerImg from "@/assets/home2.jpeg";
 import BannerImg1 from "@/assets/home1.jpeg";
+import Services from "@/components/Services";
+import AppStoreBanner from "@/components/AppStore";
+import Testimonials from "@/components/Testimonials";
+import Footer from "@/components/Footer";
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -37,6 +41,10 @@ export default function Home() {
         img={BannerImg}
         reverse={true}
       />
+      <Services />
+      <AppStoreBanner />
+      <Testimonials />
+      <Footer />
     </>
   );
 }

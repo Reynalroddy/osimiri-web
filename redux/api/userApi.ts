@@ -25,6 +25,25 @@ export const userApi = createApi({
         };
       },
     }),
+    makePayment: builder.mutation({
+      query(body) {
+        return {
+          url: "/sub/new",
+          method: "POST",
+          body,
+        };
+      },
+    }),
+    // checkSub
+    checkSub: builder.mutation({
+      query(body) {
+        return {
+          url: "/sub/checkSub",
+          method: "POST",
+          body,
+        };
+      },
+    }),
     // updateSession: builder.query({
     //   query() {
     //     return {
@@ -37,5 +56,7 @@ export const userApi = createApi({
 
 export const {
   useUpdateProfileMutation,
+  useMakePaymentMutation,
+  useCheckSubMutation,
   //  useLazyUpdateSessionQuery
 } = userApi;

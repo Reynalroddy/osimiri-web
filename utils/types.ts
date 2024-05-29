@@ -3,6 +3,16 @@ export interface BtnProps {
   type?: string;
   title: string;
   animation?: string;
+  onClick?: () => void;
+}
+export enum PlanStatus {
+  Daily = "1",
+  Weekly = "7",
+  Biweekly = "14",
+  Monthly = "30",
+  Quarterly = "90",
+  Semiannual = "180",
+  Yearly = "360",
 }
 
 export interface User {
@@ -68,11 +78,24 @@ export const profileSchema = z.object({
   }),
 });
 
+export const subSchema = z.object({
+  plan: z.nativeEnum(PlanStatus),
+});
 export interface IUserState {
   user: any;
   isAuthenticated: boolean;
   accesstoken: string;
 }
+
+export type usersData = {
+  isActiveSub: boolean;
+  username: string;
+  email: string;
+};
+export type IModal = {
+  triggerText: string;
+  children: React.ReactNode;
+};
 
 export interface IErrorState {
   data: {
@@ -82,5 +105,6 @@ export interface IErrorState {
 }
 
 export type LoginType = z.infer<typeof loginSchema>;
+export type SubType = z.infer<typeof subSchema>;
 export type RegisterType = z.infer<typeof registerSchema>;
 export type ProfileType = z.infer<typeof profileSchema>;

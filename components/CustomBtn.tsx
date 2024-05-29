@@ -2,9 +2,15 @@ import React from "react";
 import { Button } from "./ui/button";
 import { BtnProps } from "@/utils/types";
 
-const CustomBtn = ({ type = "primary", title, animation }: BtnProps) => {
+const CustomBtn = ({
+  type = "primary",
+  title,
+  animation,
+  onClick,
+}: BtnProps) => {
   return (
     <Button
+      onClick={onClick}
       className={`
         ${
           type === "primary"

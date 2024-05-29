@@ -1,7 +1,10 @@
 import React from "react";
 import { Button } from "./ui/button";
 import CustomBtn from "./CustomBtn";
+import { useRouter } from "next/navigation";
 const Hero = () => {
+  const router = useRouter();
+
   return (
     <div
       className=" duration-300"
@@ -13,6 +16,7 @@ const Hero = () => {
         width: "100%",
         height: "80%",
       }}
+      id="home"
     >
       <div className="bg-white/70  dark:bg-black/80 duration-300 ">
         <div className="container min-h-[620px] flex items-center">
@@ -33,7 +37,11 @@ const Hero = () => {
             <p data-aos="fade-up" data-aos-delay="500">
               “The body achieves what the mind believes.”{" "}
             </p>
-            <CustomBtn animation="fade-up" title={"Get Started"}></CustomBtn>
+            <CustomBtn
+              animation="fade-up"
+              title={"Get Started"}
+              onClick={() => router.push("/auth/register")}
+            ></CustomBtn>
           </div>
         </div>
       </div>

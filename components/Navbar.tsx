@@ -17,6 +17,7 @@ export default function Navbar() {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.auth);
   const { data } = useSession();
+  // console.log("data", data);
   useEffect(() => {
     if (data) {
       dispatch(setUser(data?.user));
@@ -30,7 +31,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="dark:bg-black bg-white sticky top-0 left-0 shadow-md z-[1000]"
+      className="dark:bg-black bg-white sticky top-0 left-0 shadow-md z-[10]"
     >
       {({ open }) => (
         <>
@@ -45,17 +46,17 @@ export default function Navbar() {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                  <a
-                    href="#"
+                  <Link
+                    href="/"
                     className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white"
                   >
-                    Membership
-                  </a>
+                    Home
+                  </Link>
                   <a
-                    href="#"
+                    href="/#member"
                     className="rounded-md px-3 py-2 text-sm font-semibold text-gray-500 hover:bg-gray-700 hover:text-white"
                   >
-                    About Us
+                    Membership
                   </a>
                   {data === null && (
                     <Link
@@ -104,14 +105,14 @@ export default function Navbar() {
                         <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
+                              <Link
+                                href="/profile"
                                 className={`
                                 ${active} ? "bg-gray-100" : ""
                                 block px-4 py-2 text-sm text-gray-700`}
                               >
                                 Your Profile
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
 
@@ -159,17 +160,17 @@ export default function Navbar() {
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
               >
-                Membership
+                Home
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/#member"
                 className="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                About Us
+                Membership
               </Disclosure.Button>
               {data === null && (
                 <Disclosure.Button
@@ -208,7 +209,7 @@ export default function Navbar() {
                 <div className="mt-3 space-y-1 px-2">
                   <Disclosure.Button
                     as="a"
-                    href="#"
+                    href="/profile"
                     className="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-300 hover:bg-gray-700 hover:text-white"
                   >
                     Your Profile

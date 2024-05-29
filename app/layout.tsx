@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "@/components/AuthProvider";
 import { getServerSession } from "next-auth";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default async function RootLayout({
 }>) {
   const session = await getServerSession();
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body
         className={`${roboto.className} w-full max-w-[1920px] mx-auto bg-white dark:bg-black`}
       >
