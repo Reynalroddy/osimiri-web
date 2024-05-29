@@ -82,11 +82,8 @@ const Testimonials = () => {
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestimonialData.map((data) => (
-              <div className="my-6">
-                <div
-                  key={data.id}
-                  className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-[#111111] bg-primary/10 relative"
-                >
+              <div className="my-6" key={data.id}>
+                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-[#111111] bg-primary/10 relative">
                   <div className="mb-4">
                     <img
                       src={data.img}

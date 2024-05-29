@@ -133,8 +133,8 @@ const Services = () => {
                   ₦{skill.price}
                 </h1>
 
-                {skill.description.map((desc) => (
-                  <p>{desc}</p>
+                {skill.description.map((desc, index) => (
+                  <p key={index}>{desc}</p>
                 ))}
                 <p className="font-semibold text-2xl">
                   {" "}
