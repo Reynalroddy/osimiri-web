@@ -2,8 +2,9 @@ import { columns } from "@/components/Table/Column";
 import { DataTable } from "@/components/Table/data-table";
 import React from "react";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+// import { authOptions } from "../api/auth/[...nextauth]/route";
 import axios from "@/utils/axios";
+import { authOptions } from "../api/authOption";
 export default async function page() {
   const session = await getServerSession(authOptions);
 
